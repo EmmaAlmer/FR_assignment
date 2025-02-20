@@ -1,12 +1,53 @@
-import { Link } from "react-router";
-import logoDark from "./logo-dark.svg";
-import logoLight from "./logo-light.svg";
+
+import BookComponent from "~/bookComponent/bookComponent";
+import type { Book } from "~/types/Library";
 
 export function Welcome() {
+
+  const elements: Book[] = [
+    
+    {
+      title: "Kossa mu",
+      author: "siri dahl",
+      id: 1,
+      inStock: true,
+    }, 
+
+    {
+      title: "Harry Potter",
+      author: "JK Rowling",
+      id: 2,
+      inStock: true,
+    },
+
+    {
+      title: "Game of thrones",
+      author: "George R.R. Martin",
+      id: 3,
+      inStock: false,
+    },
+
+    {
+      title: "Mamma mia",
+      author: "Abba",
+      id: 4,
+      inStock: true,
+    },
+  ];
+
   return (
     <main>
+
       <h1 id="h1"> Hej och välkommen till biblioteket </h1>
-      <Link to={"/aboutBook"}> gå till information om bok </Link>
+      
+   <div>
+     {elements.map((element) => (
+
+      <BookComponent title={element.title} author={element.author} id={element.id} inStock={element.inStock}></BookComponent>
+
+     ))}
+   </div>
+
     </main>
   );
 }
