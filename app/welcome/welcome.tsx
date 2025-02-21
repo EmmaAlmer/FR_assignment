@@ -39,8 +39,10 @@ export function Welcome() {
     <main>
 
       <h1 id="h1"> Hej och välkommen till biblioteket </h1>
+
+      <h2> Böcker: </h2>
       
-   <div>
+   <div id="bookComponent"> 
      {elements.map((element) => (
 
       <BookComponent title={element.title} author={element.author} id={element.id} inStock={element.inStock}></BookComponent>

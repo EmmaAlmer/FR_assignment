@@ -1,13 +1,20 @@
-import { Link } from "react-router";
+
+import { Link, useNavigate } from "react-router";
 import type { Book } from "~/types/Library";
 
   const BookComponent = (props: Book) => {
+
+    const linkPath: string = "/aboutBook?title=" + props.title 
+    + "&author=" + props.author
+    + "&inStock=" + props.inStock
+    + "&id=" + props.id;
+        
     return (
         <div>
-
-          <Link to={"/aboutBook"}> 
+        
+          <Link id="links" to= {linkPath}> 
           <h1> {props.title} </h1> 
-          <p> {props.author} </p>
+          <h2> {props.author} </h2>
           </Link>
           
         </div>
