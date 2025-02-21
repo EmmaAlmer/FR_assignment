@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router";
-import type { Book } from "~/types/Library";
 
 export function AboutBook(){
 
@@ -71,10 +70,9 @@ export function AboutBook(){
             {inStock === "true" ? "I lager" : "Ej i lager"}, Bok id: {id}
         </p>
 
-        <button onClick={loanBookButton}> Vill du låna bok? </button>
+        <button id="loanButton" onClick={loanBookButton}> Vill du låna bok? </button>
     
         
         </main>
-        
     );
 }

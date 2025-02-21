@@ -4,6 +4,7 @@ import type { Book } from "~/types/Library";
 
 export function Welcome() {
 
+  /*lista med böcker*/
   const elements: Book[] = [
     
     {
@@ -42,13 +43,13 @@ export function Welcome() {
 
       <h2> Böcker: </h2>
       
-   <div id="bookComponent"> 
-     {elements.map((element) => (
+      <div id="bookComponent"> 
 
-      <BookComponent title={element.title} author={element.author} id={element.id} inStock={element.inStock}></BookComponent>
+        {elements.map((element) => (
+          <BookComponent title={element.title} author={element.author} id={element.id} inStock={element.inStock}></BookComponent>
 
-     ))}
-   </div>
+        ))}
+      </div>
 
     </main>
   );

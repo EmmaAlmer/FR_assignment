@@ -1,7 +1,8 @@
 
-import { Link, useNavigate } from "react-router";
+import { Link } from "react-router";
 import type { Book } from "~/types/Library";
 
+/* bokkomponent som kan återanvändas */
   const BookComponent = (props: Book) => {
 
     const linkPath: string = "/aboutBook?title=" + props.title 
